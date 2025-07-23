@@ -17,13 +17,14 @@
 # curl -G "http://localhost:8000/search" --data-urlencode "q=John and alice" --data-urlencode "top_k=3"
 # curl -G "http://localhost:8000/search" --data-urlencode "q=building A visits" --data-urlencode "top_k=3"
 # curl -G "http://localhost:8000/search" --data-urlencode "q=building A" --data-urlencode "top_k=3"
+# curl -G "http://localhost:8000/search" --data-urlencode "q=visits in building A" --data-urlencode "top_k=3"
+# curl -G "http://localhost:8000/search" --data-urlencode "q=location building A" --data-urlencode "top_k=3"
 
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 import httpx
-import asyncio
 from typing import List
 
 app = FastAPI()
